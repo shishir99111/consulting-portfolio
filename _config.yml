@@ -1,41 +1,12 @@
-title: Shishir Sonekar - Portfolio
+# Site settings
+title: Dripping coffee labs
+email: drippingcoffeelabs@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  I’m a Full Stack Engineer by profession and I’m passionate to be the 
-  part of this Industry. Major Skill sets are Web Services, Javascript,
-  Nodejs, Vuejs, React, Python, Linux. Currently, Turning every stones in Blockchain Space.
-  My current assignment is with CivilMaps where I'm into empowering Self Driving Car & HD Maps space, 
-  previously with InstaRem where i’m Involved in developing 
-  Core Banking Platform from Scratch. Basically, we are trying to change the way 
-  people make Cross Border Money Transfer. Here, i fall in Love with Financial 
-  Technology!
-permalink: ':title/'
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://127.0.0.1:4000/" # the base hostname & protocol for your site, e.g. http://example.com
-site-twitter: https://twitter.com/shishirViz #if your site has a twitter account, enter it here
+baseurl: "/" # the subpath of your site, e.g. /blog/
+url: "http://127.0.0.1:4000/" # the base hostname & protocol for your site
 
-# Author Settings
-author: Shishir Sonekar # add your name
-author-img: teri.jpg # add your photo
-about-author: Full Stack Engineer | Javscript | Python | Web Development | MicroService Architecture | Blockchain.  Helping Startup to make their first step.   Open for Consulting work. # add description
-social-twitter: shishirViz # add your Twitter handle
-social-github: shishir99111 # add your Github handle
-social-linkedin: shishir-sonekar-2a1843125 # add your Linkedin handle
-social-email: shishir.sr01@gmail.com # add your Email address
+twitter_username: shishirviz
+github_username: shishir99111
 
-# Disqus
-# discus-identifier: mr-brown # add your discus identifier
-
-# Tracker
-analytics: Google Analytics # Google Analytics
-
-# Build Settings
+# Build settings
 markdown: kramdown
-plugins:
-  - jekyll-sitemap
-  - jekyll-paginate
-  - jemoji
-
-paginate: 8
-paginate_path: "/page/:num"
-
-exclude: ["node_modules", "gulpfile.js", "package.json", "yarn.lock"]
