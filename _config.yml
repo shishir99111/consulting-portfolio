@@ -7,6 +7,15 @@ url: "http://127.0.0.1:4000/" # the base hostname & protocol for your site
 
 twitter_username: shishirviz
 github_username: shishir99111
+maps:
+  google:
+    api_key: AIzaSyDy7Wk6IZLsIGGZrRv8JY66hiWgP2p8kZo
+location:
+  latitude: 51.5285582
+  longitude: -0.2416807
 
 # Build settings
 markdown: kramdown
+
+plugins:
+  - jekyll-maps
