@@ -10,6 +10,7 @@ github_username: shishir99111
 
 maps:
   google:
+    api_key: AIzaSyDy7Wk6IZLsIGGZrRv8JY66hiWgP2p8kZo
     options:
       disableDefaultUI: false
       scrollwheel: false
