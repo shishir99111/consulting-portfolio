@@ -10,6 +10,3 @@ github_username: shishir99111
 
 # Build settings
 markdown: kramdown
-
-plugins:
-  - jekyll-maps
