@@ -13,3 +13,5 @@ markdown: kramdown
 
 plugins:
   - jekyll-maps
+gems:
+  - jekyll-maps
