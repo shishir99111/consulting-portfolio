@@ -11,8 +11,8 @@ maps:
   google:
     api_key: AIzaSyDy7Wk6IZLsIGGZrRv8JY66hiWgP2p8kZo
 location:
-  latitude: 51.5285582
-  longitude: -0.2416807
+  latitude: "51.5285582"
+  longitude: "-0.2416807"
 
 # Build settings
 markdown: kramdown
