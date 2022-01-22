@@ -6,5 +6,3 @@ source "https://rubygems.org"
 gem "jekyll"
 gem "jekyll-maps"
 gem "webrick", "~> 1.7"
-
-bundle install
