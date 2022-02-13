@@ -75,6 +75,7 @@ aside {
     @include sans-serif-font;
     @include transition-all;
     .navbar-header .navbar-brand {
+        float: unset !important;
         color: $theme-primary;
         @include sans-serif-font;
         font-weight: 700;
