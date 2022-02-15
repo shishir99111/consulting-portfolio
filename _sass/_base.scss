@@ -156,7 +156,6 @@ header {
     min-height: auto;
     @include background-cover;
     background-position: center;
-    background-image: url('../img/header.jpg');
     text-align: center;
     color: white;
     .header-content {
@@ -205,6 +204,10 @@ header {
             }
         }
     }
+}
+
+.mainHead {
+    background-image: url('../img/header.jpg');
 }
 
 // Sections
@@ -354,5 +357,11 @@ body {
 @media (min-width: 768px) {
     .navbar-right {
         margin-top: 2%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1135px;
     }
 }

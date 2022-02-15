@@ -1,0 +1,28 @@
+<section class="bg-primary" style="background-color: #b97250 !important;">
+    <div class="container">
+        <!-- <div class="row"> -->
+            <div class="text-center">
+                <h1>For the love of Space exploration</h1>
+                <p>This page is dedicated to all the Space buffs. Everyday we share some interesting space info with related mesmerising picture coming directly from the Nasa Server.</p>
+                <h2 id="title"></h2>
+                <img id="photo"></img>
+                </br>
+                <p id="explanation"></p>
+                <a id="hd_photo" target="_blank">Checkout photo in high res</a>
+            </div>
+        <!-- </div> -->
+    </div>
+</section>
+
+<script>
+    fetch("{{site.url}}/api/apod", { method: 'GET' })
+    .then(response => response.text())
+    .then(result => {
+        const json = JSON.parse(result);
+        document.getElementById('title').textContent = json.title
+        document.getElementById('explanation').textContent = json.explanation
+        document.getElementById('photo').src = json.url
+        document.getElementById('hd_photo').href = json.hdurl
+    })
+    .catch(error => console.log('error', error));
+</script>
