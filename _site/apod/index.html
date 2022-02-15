@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Dripping Coffee Labs</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="http://127.0.0.1:4000/css/bootstrap.min.css" type="text/css">
+
+    <!-- Custom Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link rel="icon" type="image/x-icon" href="http://127.0.0.1:4000/img/logo.png">
+    <link rel="stylesheet" href="http://127.0.0.1:4000/font-awesome/css/font-awesome.min.css" type="text/css">
+
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="http://127.0.0.1:4000/css/animate.min.css" type="text/css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="http://127.0.0.1:4000/css/main.css" type="text/css">
+
+    <!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="http://127.0.0.1:4000/css/vendor/animate/animate.css">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="http://127.0.0.1:4000/css/vendor/css-hamburgers/hamburgers.min.css">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="http://127.0.0.1:4000/css/vendor/animsition/css/animsition.min.css">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="http://127.0.0.1:4000/css/vendor/select2/select2.min.css">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="http://127.0.0.1:4000/css/vendor/daterangepicker/daterangepicker.css">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="http://127.0.0.1:4000/css/vendor/noui/nouislider.min.css">
+    <!--===============================================================================================-->
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+
+<body id="page-top">
+  <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div class="container">
+                <div class="row" style="height: 90px;">
+                    <div class="col-lg-8">
+                        <img src="http://127.0.0.1:4000/img/logo.png" style="width: 90px;"></img>
+                        <a class="navbar-brand page-scroll" href="#page-top" style="font-size: 30px;">Dripping Coffee Labs</a>
+                        <!-- <img src="img/logo_text.png" style="width: 50%"></img> -->
+                    </div>
+                </div>
+            </div>
+            
+            
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right" style="font-size: 30px;">
+                <li>
+                    <a class="page-scroll" href="/apod" style="font-size: 14px;">Resources</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#about" style="font-size: 14px;">About</a>
+                </li>
+                <!-- <li>
+                    <a class="page-scroll" href="#services">Services</a>
+                </li> -->
+                <!-- <li>
+                    <a class="page-scroll" href="#portfolio">Portfolio</a>
+                </li> -->
+                <li>
+                    <a class="page-scroll" href="#contact" style="font-size: 14px;">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+
+  <section class="bg-primary" style="background-color: #b97250 !important;">
+    <div class="container">
+        <!-- <div class="row"> -->
+            <div class="text-center">
+                <h1>For the love of Space exploration</h1>
+                <p>This page is dedicated to all the Space buffs. Everyday we share some interesting space info with related mesmerising picture coming directly from the Nasa Server.</p>
+                <h2 id="title"></h2>
+                <img id="photo"></img>
+                </br>
+                <p id="explanation"></p>
+                <a id="hd_photo" target="_blank">Checkout photo in high res</a>
+            </div>
+        <!-- </div> -->
+    </div>
+</section>
+
+<script>
+    fetch("http://127.0.0.1:4000/api/apod", { method: 'GET' })
+    .then(response => response.text())
+    .then(result => {
+        const json = JSON.parse(result);
+        document.getElementById('title').textContent = json.title
+        document.getElementById('explanation').textContent = json.explanation
+        document.getElementById('photo').src = json.url
+        document.getElementById('hd_photo').href = json.hdurl
+    })
+    .catch(error => console.log('error', error));
+</script>
+  <!-- <section id="services">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">At Your Service</h2>
+                <hr class="primary">
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="service-box">
+                    <i class="fa fa-4x fa-diamond wow bounceIn text-primary"></i>
+                    <h3>Sturdy Templates</h3>
+                    <p class="text-muted">Our templates are updated regularly so they don't break.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="service-box">
+                    <i class="fa fa-4x fa-paper-plane wow bounceIn text-primary" data-wow-delay=".1s"></i>
+                    <h3>Ready to Ship</h3>
+                    <p class="text-muted">You can use this theme as is, or you can make changes!</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="service-box">
+                    <i class="fa fa-4x fa-newspaper-o wow bounceIn text-primary" data-wow-delay=".2s"></i>
+                    <h3>Up to Date</h3>
+                    <p class="text-muted">We update dependencies to keep things fresh.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="service-box">
+                    <i class="fa fa-4x fa-heart wow bounceIn text-primary" data-wow-delay=".3s"></i>
+                    <h3>Made with Love</h3>
+                    <p class="text-muted">You have to make your websites with love these days!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+ -->
+  <!-- <section class="no-padding" id="portfolio">
+    <div class="container-fluid">
+        <div class="row no-gutter">
+            <div class="col-lg-4 col-sm-6">
+                <a href="#" class="portfolio-box">
+                    <img src="img/portfolio/1.jpg" class="img-responsive" alt="">
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-category text-faded">
+                                Category
+                            </div>
+                            <div class="project-name">
+                                Project Name
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <a href="#" class="portfolio-box">
+                    <img src="img/portfolio/2.jpg" class="img-responsive" alt="">
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-category text-faded">
+                                Category
+                            </div>
+                            <div class="project-name">
+                                Project Name
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <a href="#" class="portfolio-box">
+                    <img src="img/portfolio/3.jpg" class="img-responsive" alt="">
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-category text-faded">
+                                Category
+                            </div>
+                            <div class="project-name">
+                                Project Name
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <a href="#" class="portfolio-box">
+                    <img src="img/portfolio/4.jpg" class="img-responsive" alt="">
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-category text-faded">
+                                Category
+                            </div>
+                            <div class="project-name">
+                                Project Name
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <a href="#" class="portfolio-box">
+                    <img src="img/portfolio/5.jpg" class="img-responsive" alt="">
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-category text-faded">
+                                Category
+                            </div>
+                            <div class="project-name">
+                                Project Name
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <a href="#" class="portfolio-box">
+                    <img src="img/portfolio/6.jpg" class="img-responsive" alt="">
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-category text-faded">
+                                Category
+                            </div>
+                            <div class="project-name">
+                                Project Name
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+ -->
+  <!--   <aside class="bg-dark">
+      <div class="container text-center">
+          <div class="call-to-action">
+              <h2>Free Download at Start Bootstrap!</h2>
+              <a href="#" class="btn btn-default btn-xl wow tada">Download Now!</a>
+          </div>
+      </div>
+  </aside>
+ -->
+  <section id="footer" class="bg-dark">
+    <footer class="w-100 py-4 flex-shrink-0">
+        <div class="container py-4">
+            <div class="row gy-4 gx-5">
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="h3 text-white">Dripping Coffee Labs Pvt. Ltd.</h5>
+                    <p class="small text-muted mb-0">CIN: U72900MP2021PTC056423</br>GSTIN: 23AAICD5724D1Z0
+                    </br>Address:
+                    </br>Mumbai: Raheja Platinum, Sag Baug Road, off, Andheri - Kurla Rd, Marol, Andheri East, Mumbai, Maharashtra 400059
+                    </br>Indore: 4th floor, Apollo Premier, Indore, Madhya Pradesh, India, 452001</p>
+                    <p class="small text-muted mb-0">&copy; Copyrights 2021-2022. All rights reserved. <a class="text-primary" href="#">Drippingcoffeelabs.com</a></p>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <!-- <h5 class="text-white mb-3">Quick links</h5>
+                    <ul class="list-unstyled text-muted">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Get started</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul> -->
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <!-- <h5 class="text-white mb-3">Quick links</h5>
+                    <ul class="list-unstyled text-muted">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Get started</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul> -->
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    
+                    <!-- <h5 class="text-white mb-3">Newsletter</h5> -->
+                    <p class="text-muted"></br>Feel free to reach us at:</br>
+                        <a href="mailto:info@drippingcoffeelabs.com">info@drippingcoffeelabs.com</a></br>
+                        or give us a call at</br>
+                        +91 8149579699
+                    </p>
+                    <p class="text-muted"></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</section>
+  <!-- jQuery -->
+<script src="http://127.0.0.1:4000/js/jquery.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="http://127.0.0.1:4000/js/bootstrap.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="http://127.0.0.1:4000/js/jquery.easing.min.js"></script>
+<script src="http://127.0.0.1:4000/js/jquery.fittext.js"></script>
+<script src="http://127.0.0.1:4000/js/wow.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="http://127.0.0.1:4000/js/creative.js"></script>
+<script src="http://127.0.0.1:4000/js/contact.js"></script>
+
+</body>
+
+</html>
