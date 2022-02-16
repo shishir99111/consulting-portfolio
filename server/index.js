@@ -21,6 +21,7 @@ app.use(express.static(path.join(__dirname, '/../_site')));
 
 app.get('/api/apod', (req, res)=>{
   console.log('Fetching NASA API');
+  // &date=2022-02-16 for date based content
   axios.get('https://api.nasa.gov/planetary/apod?api_key=Se2v4vDZIfaUh1R8CeO4940NxTKNbjQxzPVhst96')
   .then(response => {
     console.log('response.data', response.data);

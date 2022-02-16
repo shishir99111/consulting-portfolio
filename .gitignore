@@ -3,4 +3,5 @@
 .vscode/
 .DS_Store
 server/node_modules
-_site
+_site/*
+.jekyll-cache/*
