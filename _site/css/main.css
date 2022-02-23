@@ -124,7 +124,7 @@ body { -webkit-tap-highlight-color: #222; }
 
 @media (min-width: 768px) { .navbar-right { margin-top: 2%; } }
 
-@media (min-width: 1200px) { .container { width: 1135px; } }
+@media (min-width: 1200px) { .container { width: 1050px; } }
 
 /*---------------------------------------------*/
 input { outline: none; border: none; }
