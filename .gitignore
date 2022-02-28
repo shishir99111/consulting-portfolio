@@ -5,4 +5,4 @@
 server/node_modules
 _site/*
 .jekyll-cache/*
-__site/*
+_site/*
